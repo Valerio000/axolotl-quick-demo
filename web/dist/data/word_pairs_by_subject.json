@@ -1,0 +1,14 @@
+{
+  "corpus_stats": {
+    "total_sentences": 100,
+    "total_documents": 3,
+    "selected_documents": ["A", "B", "C"],
+    "classical_count": 5,
+    "modern_count": 25
+  },
+  "word_pairs": [
+    {"id":1, "spanish":"casa", "nahuatl":"calli", "dialect":"Modern", "source":"A", "full_spanish":"La casa es grande.", "full_nahuatl":"Calli..."},
+    {"id":2, "spanish":"perro", "nahuatl":"itzcuintli", "dialect":"Modern", "source":"A", "full_spanish":"El perro corre.", "full_nahuatl":"Itzcuintli..."},
+    {"id":3, "spanish":"agua", "nahuatl":"atl", "dialect":"Classical", "source":"B", "full_spanish":"El agua está fría.", "full_nahuatl":"Atl..."}
+  ]
+}

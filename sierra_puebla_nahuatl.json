@@ -1,0 +1,20 @@
+{
+  "corpus_stats": {
+    "total_corpus_size": 16111,
+    "sierra_puebla_count": 0,
+    "percentage": "0.00%",
+    "target_iso_code": "nhi",
+    "target_regions": [
+      "Sierra Puebla",
+      "Sierra Norte",
+      "Zacatlán",
+      "Ahuacatlán",
+      "Tepetzintla",
+      "San Miguel Tenango",
+      "Ixquihuacan",
+      "Omitlán"
+    ]
+  },
+  "dialect_distribution": {},
+  "sample_entries": []
+}
