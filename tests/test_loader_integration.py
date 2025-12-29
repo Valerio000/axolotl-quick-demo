@@ -8,10 +8,10 @@ from axolotl.model import CorpusEntry
 
 
 class FakeLoader:
-    def __init__(self, items):
+    def __init__(self, items: list[CorpusEntry]):
         self._items = items
 
-    def load(self):
+    def load(self) -> list[CorpusEntry]:
         return self._items
 
 

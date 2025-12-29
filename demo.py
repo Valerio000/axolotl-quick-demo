@@ -8,7 +8,7 @@ import json
 import re
 from collections import defaultdict
 from pathlib import Path
-from typing import Iterable, Optional
+from typing import Iterable, Optional, Dict, List, Any
 
 from axolotl.model import CorpusEntry
 from axolotl.loader import CorpusLoader, DefaultCorpusLoader
@@ -28,28 +28,43 @@ SNIP = 60
 PUNCT = re.compile(r'^\W+|\W+$')
 
 
-def load_corpus(loader: Optional[CorpusLoader] = None) -> Iterable[CorpusEntry]:
+def load_corpus(
+    loader: Optional[CorpusLoader] = None,
+) -> List[CorpusEntry]:
     """Load entries via the provided loader (or the DefaultCorpusLoader)."""
     if loader is None:
         loader = DefaultCorpusLoader()
+
+    # Convert to a concrete list to make downstream typing simpler
     return list(loader.load())
 
 
-def categorize_by_document(entries):
-    docs = defaultdict(list)
+def categorize_by_document(
+    entries: Iterable[CorpusEntry],
+) -> Dict[str, List[CorpusEntry]]:
+    docs: Dict[str, List[CorpusEntry]] = defaultdict(list)
     for e in entries:
         if e.spanish.strip() and e.nahuatl.strip():
             docs[e.document].append(e)
     return docs
 
 
-def select_documents(doc_map, n: int = 3, min_entries: int = 10):
-    chosen = [name for name, items in doc_map.items() if len(items) >= min_entries]
-    return chosen[:n] if len(chosen) >= n else list(doc_map)[:n]
+def select_documents(
+    doc_map: Dict[str, List[CorpusEntry]],
+    n: int = 3,
+    min_entries: int = 10,
+) -> List[str]:
+    chosen: List[str] = [
+        name for name, items in doc_map.items() if len(items) >= min_entries
+    ]
+    if len(chosen) >= n:
+        return chosen[:n]
+    # Fallback: preserve insertion order of doc_map keys
+    return list(doc_map)[:n]
 
 
 def first_content_word(text: str) -> str:
-    last = ""
+    last: str = ""
     for tok in (t.strip() for t in text.split()):
         tok = PUNCT.sub("", tok)
         if not tok:
@@ -60,8 +75,13 @@ def first_content_word(text: str) -> str:
     return last or "N/A"
 
 
-def extract_word_pairs(selected_docs, docs, per_doc=SAMPLE_PER_DOC):
-    pairs, cnt = [], 0
+def extract_word_pairs(
+    selected_docs: Iterable[str],
+    docs: Dict[str, List[CorpusEntry]],
+    per_doc: int = SAMPLE_PER_DOC,
+) -> List[Dict[str, Any]]:
+    pairs: List[Dict[str, Any]] = []
+    cnt = 0
     for doc in selected_docs:
         for e in docs.get(doc, [])[:per_doc]:
             cnt += 1
@@ -90,7 +110,12 @@ def extract_word_pairs(selected_docs, docs, per_doc=SAMPLE_PER_DOC):
     return pairs
 
 
-def write_output(pairs, entries, doc_map, selected_docs):
+def write_output(
+    pairs: List[Dict[str, Any]],
+    entries: List[CorpusEntry],
+    doc_map: Dict[str, List[CorpusEntry]],
+    selected_docs: List[str],
+) -> None:
     classical = sum(1 for p in pairs if "Classical" in p["dialect"])
     stats = {
         "total_sentences": len(entries),
