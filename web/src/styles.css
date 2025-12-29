@@ -1,0 +1,4 @@
+body { font-family: Inter, system-ui, sans-serif; margin: 12px; }
+.container { max-width: 900px; margin: 0 auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.card { padding: 12px; }
