@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { GlassCard } from 'liquid-glass-react'
+import GlassCard from './GlassCard'
 
 export default function App() {
   const [data, setData] = useState(null)
