@@ -3,10 +3,13 @@
 Keep functions testable and clear while removing ceremony.
 """
 
-from dataclasses import dataclass
 from collections import defaultdict
 import logging, json, re
 from pathlib import Path
+from typing import Iterable, Optional
+
+from axolotl.model import CorpusEntry
+from axolotl.loader import CorpusLoader, DefaultCorpusLoader
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -17,21 +20,12 @@ OUT = Path("word_pairs_by_subject.json")
 SNIP = 60
 PUNCT = re.compile(r'^\W+|\W+$')
 
-@dataclass
-class CorpusEntry:
-    spanish: str
-    nahuatl: str
-    dialect: str
-    document: str
-    iso: str = ""
 
-
-def load_corpus(name: str = "axolotl"):
-    import elotl.corpus
-    raw = elotl.corpus.load(name)
-    if not raw:
-        raise RuntimeError("Corpus not found or empty")
-    return [CorpusEntry(*entry[:5]) for entry in raw]
+def load_corpus(loader: Optional[CorpusLoader] = None) -> Iterable[CorpusEntry]:
+    """Load entries via the provided loader (or the DefaultCorpusLoader)."""
+    if loader is None:
+        loader = DefaultCorpusLoader()
+    return list(loader.load())
 
 
 def categorize_by_document(entries):
