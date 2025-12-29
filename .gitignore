@@ -1,0 +1,15 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+
+# Node artifacts
+web/node_modules/
+web/dist/
+web/package-lock.json
+
+# local envs
+.env
+.venv/
+
+# Editor files
+.vscode/

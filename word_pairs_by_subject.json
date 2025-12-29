@@ -1,0 +1,285 @@
+{
+  "corpus_stats": {
+    "total_sentences": 16111,
+    "total_documents": 34,
+    "selected_documents": [
+      "Vida económica de Tenochtitlan",
+      "Trece Poetas del Mundo Azteca",
+      "Diario"
+    ],
+    "classical_count": 20,
+    "modern_count": 10
+  },
+  "word_pairs": [
+    {
+      "id": 1,
+      "spanish": "así,",
+      "nahuatl": "Auh",
+      "dialect": "Classical Nahuatl",
+      "source": "Vida económica de Tenochtitlan",
+      "full_spanish": "Y así, cuando hizo su ofrenda de fuego, se sienta delante de...",
+      "full_nahuatl": "Auh in ye yuhqui in on tlenamacac niman ye ic teixpan on mot..."
+    },
+    {
+      "id": 2,
+      "spanish": "Ya",
+      "nahuatl": "aocmo",
+      "dialect": "Classical Nahuatl",
+      "source": "Vida económica de Tenochtitlan",
+      "full_spanish": "Ya no pueden comer; acaso los procuran, pero ellos tienen el...",
+      "full_nahuatl": "aocmo uel quicua in nelli mach quincuitlahuiltia za yuh qui ..."
+    },
+    {
+      "id": 3,
+      "spanish": "sus",
+      "nahuatl": "Auh",
+      "dialect": "Classical Nahuatl",
+      "source": "Vida económica de Tenochtitlan",
+      "full_spanish": "Y sus ataderos del cabello eran cordones de hilos de muchos ...",
+      "full_nahuatl": "Auh in itzonnepilhuaz tlatlapalicpatl chichiltic, coztic, te..."
+    },
+    {
+      "id": 4,
+      "spanish": ".",
+      "nahuatl": ".",
+      "dialect": "Classical Nahuatl",
+      "source": "Vida económica de Tenochtitlan",
+      "full_spanish": ".\tPues cuando daba órdenes Motecuhzoma de ir en exploración ...",
+      "full_nahuatl": ".\tAuh in ihcuac tlanauatiaya Moteoczomatzin in zazo campa ca..."
+    },
+    {
+      "id": 5,
+      "spanish": ".",
+      "nahuatl": ".",
+      "dialect": "Classical Nahuatl",
+      "source": "Vida económica de Tenochtitlan",
+      "full_spanish": ".\tY fue entonces cuando discutieron, al haberse reunido en j...",
+      "full_nahuatl": ".\tAuh ye oncan im monauatique in ic mocentlalique, quihtoque..."
+    },
+    {
+      "id": 6,
+      "spanish": "pero",
+      "nahuatl": "yece",
+      "dialect": "Classical Nahuatl",
+      "source": "Vida económica de Tenochtitlan",
+      "full_spanish": "pero no más en su casa ardía, y no a media noche, sino aun c...",
+      "full_nahuatl": "yece zan ichan in tlatlaya, amo youalnepantla: oc achi tonat..."
+    },
+    {
+      "id": 7,
+      "spanish": "el",
+      "nahuatl": "Iuan",
+      "dialect": "Classical Nahuatl",
+      "source": "Vida económica de Tenochtitlan",
+      "full_spanish": "Y el ropaje del cuello que lo envuelve una cosa parecida a ...",
+      "full_nahuatl": "Iuan in tlaquechpanyotl iuhqui almatica, amatl in tlacuillol..."
+    },
+    {
+      "id": 8,
+      "spanish": "cuando",
+      "nahuatl": "Auh",
+      "dialect": "Classical Nahuatl",
+      "source": "Vida económica de Tenochtitlan",
+      "full_spanish": "Y cuando ya es totalmente de día se mete la gente, se retrae...",
+      "full_nahuatl": "Auh uel iuh cemilhuitl in calacoua in nepielo aocmo nehtotil..."
+    },
+    {
+      "id": 9,
+      "spanish": "de",
+      "nahuatl": "in",
+      "dialect": "Classical Nahuatl",
+      "source": "Vida económica de Tenochtitlan",
+      "full_spanish": "de modo que no tuvieron por preciosa ni su cabeza, ni su pec...",
+      "full_nahuatl": "in ic amo oquitlazotlaque in intzontecon in imelchiquiuh, ca..."
+    },
+    {
+      "id": 10,
+      "spanish": "¡Y",
+      "nahuatl": "Auh",
+      "dialect": "Classical Nahuatl",
+      "source": "Vida económica de Tenochtitlan",
+      "full_spanish": "¡Y tendrás que llegar, tendrás que acercarte, tendrás que en...",
+      "full_nahuatl": "Auh ca itech tacitiuh itech tipachitiuh itech timotzotzonati..."
+    },
+    {
+      "id": 11,
+      "spanish": "¿Si",
+      "nahuatl": "¿In",
+      "dialect": "Classical Nahuatl",
+      "source": "Trece Poetas del Mundo Azteca",
+      "full_spanish": "¿Si es jade, si es oro, acaso no tendrá que ir allá?",
+      "full_nahuatl": "¿In chalchihuitl, teocuitlatl, mach ah ca on yaz?"
+    },
+    {
+      "id": 12,
+      "spanish": "Se",
+      "nahuatl": "Auh",
+      "dialect": "Classical Nahuatl",
+      "source": "Trece Poetas del Mundo Azteca",
+      "full_spanish": "Se fue éste a buscar a susmujeres, les dijo:",
+      "full_nahuatl": "Auh yn o ahcico,quimilhui ycihuahuan:"
+    },
+    {
+      "id": 13,
+      "spanish": "vano",
+      "nahuatl": "Onentacico,tonquizaco",
+      "dialect": "Classical Nahuatl",
+      "source": "Trece Poetas del Mundo Azteca",
+      "full_spanish": "En vano hemos llegado, hemos brotado en la tierra.",
+      "full_nahuatl": "Onentacico,tonquizaco in tlalticpac."
+    },
+    {
+      "id": 14,
+      "spanish": "¡",
+      "nahuatl": "¡anentlaxia!",
+      "dialect": "Classical Nahuatl",
+      "source": "Trece Poetas del Mundo Azteca",
+      "full_spanish": "¡ No vayais en vano!",
+      "full_nahuatl": "¡anentlaxia!"
+    },
+    {
+      "id": 15,
+      "spanish": "Su",
+      "nahuatl": "Ye",
+      "dialect": "Classical Nahuatl",
+      "source": "Trece Poetas del Mundo Azteca",
+      "full_spanish": "Su hijo ha bajado,en la primavera desciende allí,es el Dador...",
+      "full_nahuatl": "Ye temohua ipiltzin, xoxopan in ompa temoya, in Ipalnemohuan..."
+    },
+    {
+      "id": 16,
+      "spanish": "Ya",
+      "nahuatl": "In",
+      "dialect": "Classical Nahuatl",
+      "source": "Trece Poetas del Mundo Azteca",
+      "full_spanish": "Ya me voy a su casa, pereceré.",
+      "full_nahuatl": "In nonoya ye ichan, ninopolihui."
+    },
+    {
+      "id": 17,
+      "spanish": "verdaderos",
+      "nahuatl": "Auh",
+      "dialect": "Classical Nahuatl",
+      "source": "Trece Poetas del Mundo Azteca",
+      "full_spanish": "Los verdaderos mexicas, mis nietos,permanecen en fila, se ma...",
+      "full_nahuatl": "Auh in nelli mexica, in noxhuihuan, cecentecpantica, ontecpa..."
+    },
+    {
+      "id": 18,
+      "spanish": "¿Acaso",
+      "nahuatl": "¿Ac",
+      "dialect": "Classical Nahuatl",
+      "source": "Trece Poetas del Mundo Azteca",
+      "full_spanish": "¿Acaso alguien, acaso no todos nosotros, daremos alegría, ha...",
+      "full_nahuatl": "¿Ac in,aoc timochin,tic ahuiltizque,tic huellamachtizque,Moy..."
+    },
+    {
+      "id": 19,
+      "spanish": "así,echando",
+      "nahuatl": "anca",
+      "dialect": "Classical Nahuatl",
+      "source": "Trece Poetas del Mundo Azteca",
+      "full_spanish": "así,echando de menos tus cantos, me he venido a afligir, sól...",
+      "full_nahuatl": "anca za ye in mocuic a yca nihualchoca,yn zan nihualicnotlam..."
+    },
+    {
+      "id": 20,
+      "spanish": "¡Que",
+      "nahuatl": "¡",
+      "dialect": "Classical Nahuatl",
+      "source": "Trece Poetas del Mundo Azteca",
+      "full_spanish": "¡Que permanezca la tierra!",
+      "full_nahuatl": "¡ Ma huel mani tlalla!"
+    },
+    {
+      "id": 21,
+      "spanish": "cuando",
+      "nahuatl": "Auh",
+      "dialect": "",
+      "source": "Diario",
+      "full_spanish": "Y cuando el Sol estuvo solo en el cielo, enseguida comenzó a...",
+      "full_nahuatl": "Auh yn oyuh in yoca hualmotlalli tonatiuh ylhuicatitech, nim..."
+    },
+    {
+      "id": 22,
+      "spanish": "Allá",
+      "nahuatl": "Yn",
+      "dialect": "",
+      "source": "Diario",
+      "full_spanish": "Allá acudieron asimismo los señores del cabildo de la ciudad...",
+      "full_nahuatl": "Yn oncan mohuicatza yhuan yn ciudad cabildo tlaca yhuan oydo..."
+    },
+    {
+      "id": 23,
+      "spanish": "También",
+      "nahuatl": "Yhuan",
+      "dialect": "",
+      "source": "Diario",
+      "full_spanish": "También vino de España, para ser aquí juez de los obrajeros,...",
+      "full_nahuatl": "Yhuan occe cavallero ytoca don Francisco de Cardona comendad..."
+    },
+    {
+      "id": 24,
+      "spanish": "6",
+      "nahuatl": "VI",
+      "dialect": "",
+      "source": "Diario",
+      "full_spanish": "6 Tochtli, 1602.",
+      "full_nahuatl": "VI Tochtli xihuitl, 1602 años."
+    },
+    {
+      "id": 25,
+      "spanish": "Han",
+      "nahuatl": "Auh",
+      "dialect": "",
+      "source": "Diario",
+      "full_spanish": "Han pasado 77 años desde que, en el año 1 Técpatl, 1532, se ...",
+      "full_nahuatl": "Auh yhuan ya yepohualxihuitl ypan caxtollomome xihuitl yn ip..."
+    },
+    {
+      "id": 26,
+      "spanish": "domingo",
+      "nahuatl": "Yn",
+      "dialect": "",
+      "source": "Diario",
+      "full_spanish": "El domingo 18 de julio de 1593 se trasladaron a San Juan de ...",
+      "full_nahuatl": "Yn ipan axcan domingo yc XVIII mani metztli de julio de 1593..."
+    },
+    {
+      "id": 27,
+      "spanish": "24",
+      "nahuatl": "Axcan",
+      "dialect": "",
+      "source": "Diario",
+      "full_spanish": "El 24 de febrero de 1613, primer domingo de cuaresma y fiest...",
+      "full_nahuatl": "Axcan ycce domingo quaresma, yn ic 24 mani metztli febrero d..."
+    },
+    {
+      "id": 28,
+      "spanish": "Pues",
+      "nahuatl": "Amo",
+      "dialect": "",
+      "source": "Diario",
+      "full_spanish": "Pues no quieren que envíe clérigos a asentarse por todo el a...",
+      "full_nahuatl": "Amo quinequi ynic cecen clérigos ye quinmihualiznequi nohuiy..."
+    },
+    {
+      "id": 29,
+      "spanish": "esta",
+      "nahuatl": "O",
+      "dialect": "",
+      "source": "Diario",
+      "full_spanish": "De esta manera viven en su orden estos religiosos; y sepan t...",
+      "full_nahuatl": "O yhuin in y motlamaniltilia yn intlatecpanpantzinco tlaçote..."
+    },
+    {
+      "id": 30,
+      "spanish": "domingo",
+      "nahuatl": "Axcan",
+      "dialect": "",
+      "source": "Diario",
+      "full_spanish": "El domingo 10 de octubre de 1610 el señor don Antonio Valeri...",
+      "full_nahuatl": "Axcan domingo yc 10 metztli octubre de 1610 años, yquac omon..."
+    }
+  ]
+}

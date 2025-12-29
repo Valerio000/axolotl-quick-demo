@@ -1,0 +1,7 @@
+body { font-family: Inter, system-ui, sans-serif; margin: 12px; }
+.container { max-width: 900px; margin: 0 auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.card { padding: 12px; }
+
+/* simple glass-like card to emulate liquid-glass-react */
+.glass-card { padding: 12px; border-radius: 8px; backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 4px 12px rgba(0,0,0,0.08); background: rgba(255,255,255,0.6); }
