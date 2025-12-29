@@ -3,8 +3,10 @@
 Keep functions testable and clear while removing ceremony.
 """
 
+import logging
+import json
+import re
 from collections import defaultdict
-import logging, json, re
 from pathlib import Path
 from typing import Iterable, Optional
 
@@ -14,7 +16,12 @@ from axolotl.loader import CorpusLoader, DefaultCorpusLoader
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
-SKIP_WORDS = {w.lower() for w in ('y', 'el', 'la', 'los', 'las', 'un', 'una', 'de', 'en')}
+SKIP_WORDS = {
+    w.lower()
+    for w in (
+        'y', 'el', 'la', 'los', 'las', 'un', 'una', 'de', 'en',
+    )
+}
 SAMPLE_PER_DOC = 10
 OUT = Path("word_pairs_by_subject.json")
 SNIP = 60
@@ -60,15 +67,26 @@ def extract_word_pairs(selected_docs, docs, per_doc=SAMPLE_PER_DOC):
             cnt += 1
             s = first_content_word(e.spanish)
             n = first_content_word(e.nahuatl)
-            pairs.append({
-                "id": cnt,
-                "spanish": s,
-                "nahuatl": n,
-                "dialect": e.dialect,
-                "source": doc,
-                "full_spanish": (e.spanish[:SNIP] + "...") if len(e.spanish) > SNIP else e.spanish,
-                "full_nahuatl": (e.nahuatl[:SNIP] + "...") if len(e.nahuatl) > SNIP else e.nahuatl,
-            })
+            if len(e.spanish) > SNIP:
+                full_spanish = e.spanish[:SNIP] + "..."
+            else:
+                full_spanish = e.spanish
+
+            if len(e.nahuatl) > SNIP:
+                full_nahuatl = e.nahuatl[:SNIP] + "..."
+            else:
+                full_nahuatl = e.nahuatl
+            pairs.append(
+                {
+                    "id": cnt,
+                    "spanish": s,
+                    "nahuatl": n,
+                    "dialect": e.dialect,
+                    "source": doc,
+                    "full_spanish": full_spanish,
+                    "full_nahuatl": full_nahuatl,
+                }
+            )
     return pairs
 
 
@@ -81,7 +99,8 @@ def write_output(pairs, entries, doc_map, selected_docs):
         "classical_count": classical,
         "modern_count": len(pairs) - classical,
     }
-    OUT.write_text(json.dumps({"corpus_stats": stats, "word_pairs": pairs}, indent=2, ensure_ascii=False), encoding="utf-8")
+    payload = {"corpus_stats": stats, "word_pairs": pairs}
+    OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
     logger.info("Exported %s", OUT)
 
 

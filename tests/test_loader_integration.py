@@ -1,8 +1,9 @@
-import sys
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from demo import load_corpus, categorize_by_document, select_documents, extract_word_pairs
+from demo import (
+    load_corpus,
+    categorize_by_document,
+    select_documents,
+    extract_word_pairs,
+)
 from axolotl.model import CorpusEntry
 
 

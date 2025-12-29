@@ -37,7 +37,7 @@ sierra_keywords = [
     'Sierra Puebla',
     'Sierra Norte',
     'Zacatlán',
-    'Ahuacatlán', 
+    'Ahuacatlán',
     'Tepetzintla',
     'San Miguel Tenango',
     'Ixquihuacan',
@@ -50,30 +50,30 @@ for entry in axolotl:
     dialect = entry[2]
     document = entry[3]
     iso_code = entry[4] if len(entry) > 4 else ""
-    
+
     # Skip empty entries
     if not spanish_text.strip() or not nahuatl_text.strip():
         continue
-    
+
     # Filter by ISO code (nhi = Western Sierra Puebla)
     is_sierra_puebla = False
-    
+
     # Method 1: Check ISO code
     if iso_code == 'nhi':
         is_sierra_puebla = True
-    
+
     # Method 2: Check dialect field for Sierra keywords
     for keyword in sierra_keywords:
         if keyword.lower() in dialect.lower():
             is_sierra_puebla = True
             break
-    
+
     # Method 3: Check document source for Sierra keywords
     for keyword in sierra_keywords:
         if keyword.lower() in document.lower():
             is_sierra_puebla = True
             break
-    
+
     if is_sierra_puebla:
         sierra_puebla_entries.append(entry)
         dialect_counts[dialect] += 1
@@ -99,10 +99,12 @@ for i, entry in enumerate(sierra_puebla_entries[:15], 1):
     dialect = entry[2]
     document = entry[3]
     iso_code = entry[4] if len(entry) > 4 else "N/A"
-    
+
     print(f"\n{i:2d}. 📍 Document: {document}")
-    print(f"    🇪🇸 Spanish:  {spanish_text[:80]}{'...' if len(spanish_text) > 80 else ''}")
-    print(f"    🇲🇽 Nahuatl:  {nahuatl_text[:80]}{'...' if len(nahuatl_text) > 80 else ''}")
+    spanish_snip = spanish_text[:80] + ("..." if len(spanish_text) > 80 else "")
+    nahuatl_snip = nahuatl_text[:80] + ("..." if len(nahuatl_text) > 80 else "")
+    print(f"    🇪🇸 Spanish:  {spanish_snip}")
+    print(f"    🇲🇽 Nahuatl:  {nahuatl_snip}")
     print(f"    🏷️  Dialect:  {dialect}")
     print(f"    🔖 ISO Code: {iso_code}")
 
@@ -121,7 +123,7 @@ features = {
 
 for entry in sierra_puebla_entries[:100]:  # Sample first 100
     nahuatl_text = entry[1].lower()
-    
+
     # Check for absolutive -i or -e endings (not -li)
     words = nahuatl_text.split()
     for word in words:
@@ -129,15 +131,15 @@ for entry in sierra_puebla_entries[:100]:  # Sample first 100
             if not word.endswith('li'):
                 features['absolutive -i/-e'] += 1
                 break
-    
+
     # Check for vowel length markers (doubled vowels)
     if any(vowel*2 in nahuatl_text for vowel in 'aeiou'):
         features['vowel length'] += 1
-    
+
     # Check for /tl/ cluster
     if 'tl' in nahuatl_text:
         features['/tl/ cluster'] += 1
-    
+
     # Check for /kw/ sound
     if 'cu' in nahuatl_text or 'qu' in nahuatl_text:
         features['/kw/ sound'] += 1
@@ -158,6 +160,7 @@ output_data = {
     },
     'dialect_distribution': dict(dialect_counts),
     'sample_entries': [
+        # Export 30 samples
         {
             'spanish': entry[0],
             'nahuatl': entry[1],
@@ -165,14 +168,17 @@ output_data = {
             'document': entry[3],
             'iso_code': entry[4] if len(entry) > 4 else 'N/A'
         }
-        for entry in sierra_puebla_entries[:30]  # Export 30 samples
+        for entry in sierra_puebla_entries[:30]
     ]
 }
 
 with open('sierra_puebla_nahuatl.json', 'w', encoding='utf-8') as f:
     json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-print(f"\n✅ Exported {len(sierra_puebla_entries[:30])} Sierra Puebla entries to sierra_puebla_nahuatl.json")
+exported_count = len(sierra_puebla_entries[:30])
+msg = f"\n✅ Exported {exported_count} entries"
+msg += " to sierra_puebla_nahuatl.json"
+print(msg)
 
 # Step 6: Recommendations
 print("\n" + "=" * 70)
